@@ -11,9 +11,9 @@ namespace Masterplan.Tools
 
 	class Statistics
 	{
-		public static int Initiative(int level, IRole role)
+		public static int Initiative(int level, IRole role, int dexterity_score)
 		{
-			int score = (level / 2);
+			int score = (int) ((dexterity_score - 10) / 2) + (level / 2);
 
 			if ((role != null) && (role is ComplexRole))
 			{

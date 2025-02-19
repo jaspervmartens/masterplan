@@ -86,7 +86,7 @@ namespace Masterplan.UI
 			bool minion = ((fCreature.Role != null) && (fCreature.Role is Minion));
 
 			fHP = (minion) ? 1 : Statistics.HP(fCreature.Level, fCreature.Role as ComplexRole, fCreature.Constitution.Score);
-			fInit = Statistics.Initiative(fCreature.Level, fCreature.Role);
+			fInit = Statistics.Initiative(fCreature.Level, fCreature.Role, fCreature.Dexterity.Score);
 			fAC = Statistics.AC(fCreature.Level, fCreature.Role);
 			fNAD = Statistics.NAD(fCreature.Level, fCreature.Role);
 

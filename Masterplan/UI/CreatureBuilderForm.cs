@@ -117,7 +117,7 @@ namespace Masterplan.UI
 									fCreature.HP = 1;
 
 								// Init
-								fCreature.Initiative = Statistics.Initiative(fCreature.Level, fCreature.Role);
+								fCreature.Initiative = Statistics.Initiative(fCreature.Level, fCreature.Role, fCreature.Dexterity.Score);
 
 								// AC
 								fCreature.AC = Statistics.AC(fCreature.Level, fCreature.Role);
@@ -853,7 +853,7 @@ namespace Masterplan.UI
 							lines.Add("<TD colspan=2><B>Creature Advice</B></TD>");
 							lines.Add("</TR>");
 
-							int init = Statistics.Initiative(fCreature.Level, fCreature.Role);
+							int init = Statistics.Initiative(fCreature.Level, fCreature.Role, fCreature.Dexterity.Score);
 							int ac = Statistics.AC(fCreature.Level, fCreature.Role);
 							int nad = Statistics.NAD(fCreature.Level, fCreature.Role);
 
@@ -1457,10 +1457,10 @@ namespace Masterplan.UI
 
 			// Init
 			int init_index = Session.Random.Next(genepool.Count);
-			int expected_init = Statistics.Initiative(genepool[init_index].Level, genepool[init_index].Role);
+			int expected_init = Statistics.Initiative(genepool[init_index].Level, genepool[init_index].Role, genepool[init_index].Dexterity.Score);
 			int observed_init = genepool[init_index].Initiative;
 			int bonus_init = observed_init - expected_init;
-			fCreature.Initiative = Statistics.Initiative(fCreature.Level, fCreature.Role) + bonus_init;
+			fCreature.Initiative = Statistics.Initiative(fCreature.Level, fCreature.Role, fCreature.Dexterity.Score) + bonus_init;
 
 			// Languages
 			int langs_index = Session.Random.Next(genepool.Count);

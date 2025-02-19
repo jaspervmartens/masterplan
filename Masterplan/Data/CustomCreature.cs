@@ -266,12 +266,12 @@ namespace Masterplan.Data
 		{
 			get
 			{
-				int basic = Statistics.Initiative(fLevel, fRole);
+				int basic = Statistics.Initiative(fLevel, fRole, fDexterity.Score);
 				return basic + fDexterity.Modifier + fInitiativeModifier;
 			}
 			set
 			{
-				int basic = Statistics.Initiative(fLevel, fRole);
+				int basic = Statistics.Initiative(fLevel, fRole, fDexterity.Score);
 				fInitiativeModifier = value - basic - fDexterity.Modifier;
 			}
 		}
