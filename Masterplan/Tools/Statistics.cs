@@ -75,7 +75,6 @@ namespace Masterplan.Tools
 				ComplexRole cr = role as ComplexRole;
 				switch (cr.Type)
 				{
-					case RoleType.Artillery:
 					case RoleType.Brute:
 						mod = 12;
 						break;
