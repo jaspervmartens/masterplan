@@ -35,7 +35,7 @@ namespace Masterplan.Tools
 
 		public static int HP(int level, ComplexRole role, int constitution_score)
 		{
-			int multiplier = 8;
+			int multiplier = 6;
 
 			if (role != null)
 			{
@@ -43,17 +43,17 @@ namespace Masterplan.Tools
 				{
 					case RoleType.Artillery:
 					case RoleType.Lurker:
-						multiplier = 6;
+						multiplier = 4;
 						break;
 					case RoleType.Brute:
-						multiplier = 10;
+						multiplier = 8;
 						break;
 				}
 			}
 
-			int hp = constitution_score + ((level + 1) * multiplier);
+            int hp = constitution_score + ((level + 1) * multiplier);
 
-			if (role != null)
+            if (role != null)
 			{
 				switch (role.Flag)
 				{

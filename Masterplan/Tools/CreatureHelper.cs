@@ -203,15 +203,15 @@ namespace Masterplan.Tools
 			{
 				ComplexRole role = creature.Role as ComplexRole;
 
-				int hp = 8;
+				int hp = 6;
 				switch (role.Type)
 				{
 					case RoleType.Artillery:
 					case RoleType.Lurker:
-						hp = 6;
+						hp = 4;
 						break;
 					case RoleType.Brute:
-						hp = 10;
+						hp = 8;
 						break;
 				}
 
@@ -221,7 +221,7 @@ namespace Masterplan.Tools
 						hp *= 2;
 						break;
 					case RoleFlag.Solo:
-						hp *= 5;
+						hp *= 4;
 						break;
 				}
 
